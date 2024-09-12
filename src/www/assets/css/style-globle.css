@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+main {
+    margin-bottom: 40px;
+}
+
+input,
+textarea {
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+fieldset {
+    margin-top: 16px;
+    padding: 16px;
+}
+
+button {
+    padding: 4px 8px;
+    cursor: pointer;
+    border-width: 2px;
+    border-color: #a1a1a1;
+    background-color: #f1f1f1;
+}
+
+button:hover {
+    background-color: #cacaca;
+}
+
+button:disabled {
+    cursor: default;
+}
+
+button:hover:disabled {
+    background-color: #f1f1f1;
+}
+
+hr {
+    margin: 8px 0;
+}
+
+.hide {
+    display: none !important;
+}

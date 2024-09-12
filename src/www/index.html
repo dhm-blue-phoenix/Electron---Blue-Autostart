@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de-at">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <link rel="apple-touch-icon" href="">
+    <title></title>
+    <!-- JS-SCRIPTS -->
+    <script type="module" src="./assets/initializing.js"></script>
+    <!-- CSS-STYLE -->
+     <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+<body>
+    <header>
+        <div class="add-file">
+            <button type="button" class="hideBtn" container-id="addFileOverForm">Ausfürbare Datei Hinzufügen</button>
+            <hr>
+            <div class="add-file-over-form hide" id="addFileOverForm">
+                <form class="form-add-file" form-id="0">
+                    <fieldset class="form-group">
+                        <legend class="form-legend">Formular zum Hinzufügen einer Ausfürbaren Datei</legend>
+                        <div class="form-group-container">
+                            <label for="data_path">Dateipfad:</label>
+                            <input type="text" name="data_patch" id="dataPath" minlength="10" pattern="^[a-zA-Z]:\\[^\0]*\.(exe|cmd|bat|sh|bin)$" title="Dateipfad mus angebeben werden!" placeholder="drive:\patch\to\filename.exe" required>
+                            <div>
+                                <button type="button" id="insertText">Einfügen</button>
+                                <button type="button" id="openFileDialog">Suchen</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <legend class="form-legend">Datei Informationen</legend>
+                        <div class="form-group-container">
+                            <label for="file_name">Name:</label>
+                            <input type="text" name="file_name" id="fileName" minlength="3" maxlength="10" pattern="^[\w\s\-]+$" title="Name erforderlich!" required placeholder="Gib einen Namen ein!">
+                        </div>
+                        <div class="form-group-container">
+                            <label for="file_description">Beschreibung</label>
+                            <textarea name="file_description" id="fileDescription" minlength="3" maxlength="60" title="Beschreibung erforderlich!" required>Keine Beschreibung</textarea>
+                        </div>
+                    </fieldset>
+                    <button type="reset">Löschen</button>
+                    <button type="submit">Speichern</button>
+                </form>
+            </div>
+        </div>
+    </header>
+    <popups>
+        <div class="form-paste-input hide" id="formPasteInput">
+            <button type="button" class="hideBtn" container-id="formPasteInput">Schliessen</button>
+        </div>
+    </popups>
+    <main id="mainContent">
+        <!-- <button id="openFileDialog">Datei öffnen</button>
+        <button id="openFileFromPatch">Datei starten</button>
+        <div>
+            <msg>hhhh</msg>
+        </div> -->
+    </main>
+</body>
+
+</html>

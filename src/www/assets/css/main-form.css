@@ -1,0 +1,68 @@
+.add-file {
+    background-color: #a1a1a1;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    padding-bottom: 1px;
+    margin-bottom: 40px;
+}
+
+.add-file-over-form {
+    padding-top: 16px;
+    padding-bottom: 8px;
+}
+
+.form-group {
+    color: #ffffff;
+    padding: 8px;
+}
+
+.form-group-container {
+    background-color: #7a7a7a;
+    padding: 8px;
+    margin-top: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.form-group-container label {
+    padding: 0 8px 0 0;
+}
+
+.form-group-container span {
+    color: #141414;
+}
+
+.form-group-container div {
+    padding: 8px;
+}
+
+.form-group-container input {
+    width: 451px;
+}
+
+.form-group-container textarea {
+    width: 400px;
+    height: 80px;
+    resize: none;
+    overflow: auto;
+    white-space: pre-wrap;
+}
+
+.form-paste-input {
+    z-index: 5;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: #7a7a7a3b;
+    color: #000;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-legend {
+    font-size: large;
+    padding: 0 8px;
+}
