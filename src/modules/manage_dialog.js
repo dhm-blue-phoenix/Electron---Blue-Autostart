@@ -23,10 +23,4 @@ const openFileDialog = async () => {
     };
 };
 
-const getFilePath = () => {
-    // in bearbeitung
-    console.log('[getFilePath]', tempFilePath);
-    return tempFilePath;
-};
-
-module.exports = { openFileDialog, getFilePath };
+module.exports = { openFileDialog };

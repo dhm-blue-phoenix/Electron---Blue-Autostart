@@ -18,10 +18,6 @@ const openFileViaDialog = async () => {
 
 const openFileToStart = async (event) => {
     try {
-        // const filePath = await window.api.getFilePatch();
-        // if (filePath) {
-        //     window.api.openFileFromPatch(filePath);
-        // };
         const path = event.currentTarget.getAttribute('app-path');
         window.api.openFileFromPath(path);
     } catch (err) {

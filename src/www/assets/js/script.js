@@ -36,4 +36,9 @@ const hideBtn = (event) => {
     toggleVisibleElements(hide);
 };
 
-export { insertTheText, checkedCard, saveForm, hideBtn };
+const delCard = (event) => {
+    const cardId = event.currentTarget.getAttribute('card-id');
+    delItemToStorage('', cardId, 'delete');
+};
+
+export { insertTheText, checkedCard, saveForm, hideBtn, delCard };

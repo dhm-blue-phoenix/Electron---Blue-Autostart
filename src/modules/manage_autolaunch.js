@@ -25,5 +25,4 @@ const registeAutoLaunch = async (path, name, activ) => {
     };
 };
 
-
 module.exports = { registeAutoLaunch };

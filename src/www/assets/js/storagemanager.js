@@ -1,9 +1,13 @@
 import { initializing } from '../initializing.js';
 
-const delItemToStorage = (item, id) => {
+const delItemToStorage = (item, id, type) => {
     let apps = loadToStorage();
-    apps.splice(id, 1);
-    apps.push(item);
+    if (type === 'delete') {
+        apps.splice(id, 1);
+    } else {
+        apps.splice(id, 1);
+        apps.push(item);    
+    }
     localStorage.removeItem('apps');
     saveToStorage(apps);
 };

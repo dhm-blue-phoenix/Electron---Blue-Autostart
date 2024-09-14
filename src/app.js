@@ -17,7 +17,7 @@ const createMainWindow = () => {
     width: 800,
     height: 600,
     center: true,
-    autoHideMenuBar: false,
+    autoHideMenuBar: true,
     title: '',
     icon: path.join(__dirname, './www/assets/resources/logo.ico'),
     webPreferences: {
@@ -28,7 +28,7 @@ const createMainWindow = () => {
     }
   });
   mainWindow.loadFile(path.join(__dirname, './www/index.html'));
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 };
 
 app.whenReady().then(() => {
@@ -47,14 +47,15 @@ app.on('window-all-closed', () => {
 });
 
 /**
- * Kommuniziert asynchron vom Hauptprozess zum Rendererprozess.
+ * Folgende punkte fehlen:
+ * =======================
+ * - das erstellen einer Log Datei
+ * - überbrüfen ob der task vom gestarteten program leuft
+ * - eine funktion zum beenden eines programmes und dessen task
+ * - eine funktion zum öffnen des programm ordners
 */
 ipcMain.handle('open-file-dialog', async () => {
   return dialogManager.openFileDialog();
-});
-
-ipcMain.handle('get-file-patch', () => {
-  return dialogManager.getFilePath();
 });
 
 ipcMain.on('open-file-from-path', (event, filePath) => {

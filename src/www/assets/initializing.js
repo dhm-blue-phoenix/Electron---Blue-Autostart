@@ -5,7 +5,8 @@ import {
     addEventToHideBtn,
     addEventToSaveForm,
     addEventToCheckedCard,
-    addEventToOpenFile
+    addEventToOpenFile,
+    addEventToDelCard
 } from './addEvents.js';
 
 
@@ -22,8 +23,8 @@ export const initializing = async () => {
         await addEventToHideBtn();
         await addEventToSaveForm();
         await addEventToCheckedCard();
-        console.log('Start Abgeschlossen!');
+        await addEventToDelCard();
     } catch (err) {
-        console.error(err);
+        console.error('Beim Initializing ist ein problem aufgetreten:', err);
     };
 };

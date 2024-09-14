@@ -57,7 +57,7 @@ const createCardContent = (id, path, desc) => {
     CARD_CONTENT.style.display = 'block';
     CARD_CONTENT.appendChild(createCardPath(path));
     CARD_CONTENT.appendChild(createCardDesc(desc));
-    CARD_CONTENT.appendChild(createCardBtnContent(path));
+    CARD_CONTENT.appendChild(createCardBtnContent(path, id));
     return CARD_CONTENT;
 };
 
@@ -87,21 +87,22 @@ const createCardDescText = (desc) => {
     return CARD_DESC_TEXT;
 };
 
-const createCardBtnContent = (path) => {
+const createCardBtnContent = (path, id) => {
     const CARD_CONTENT_BTN = document.createElement('div');
     CARD_CONTENT_BTN.className = 'card-content-btn';
-    CARD_CONTENT_BTN.appendChild(createCardBtnDel());
+    CARD_CONTENT_BTN.appendChild(createCardBtnDel(id));
     CARD_CONTENT_BTN.appendChild(createCardBtnEdit());
     CARD_CONTENT_BTN.appendChild(createCardBtnPathCopy(path));
     CARD_CONTENT_BTN.appendChild(createCardBtnStart(path));
     return CARD_CONTENT_BTN;
 };
 
-const createCardBtnDel = () => {
+const createCardBtnDel = (id) => {
     const CARD_BTN = document.createElement('button');
     CARD_BTN.type = 'button';
-    CARD_BTN.id = 'deleteBtn';
-    CARD_BTN.disabled = true;
+    CARD_BTN.className = 'deleteBtn';
+    CARD_BTN.setAttribute('card-id', id);
+    CARD_BTN.disabled = false;
     CARD_BTN. textContent = 'Löschen'; 
     return CARD_BTN;
 };

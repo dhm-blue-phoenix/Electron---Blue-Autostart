@@ -1,6 +1,6 @@
 import { openFileViaDialog, openFileToStart } from './api/main.js';
 import { openFileDialog, insertText } from './globleVar.js';
-import { insertTheText, checkedCard, saveForm, hideBtn } from './js/script.js';
+import { insertTheText, checkedCard, saveForm, hideBtn, delCard } from './js/script.js';
 
 const addEventToHideBtn = () => {
     document.querySelectorAll('.hideBtn').forEach(btn => {
@@ -53,11 +53,21 @@ const addEventToOpenFile = () => {
     });
 };
 
+const addEventToDelCard = () => {
+    document.querySelectorAll('.deleteBtn').forEach(btn => {
+        if(!btn.hasEventListener) {
+            btn.addEventListener('click', (event) => { delCard(event) });
+        };
+        btn.hasEventListener = true;
+    });
+};
+
 export {
     addEventToInsertText,
     addEventToHideBtn,
     addEventToSaveForm,
     addEventToCheckedCard,
     addEventToDialog,
-    addEventToOpenFile
+    addEventToOpenFile,
+    addEventToDelCard
 };
