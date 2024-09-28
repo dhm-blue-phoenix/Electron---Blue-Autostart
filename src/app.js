@@ -6,6 +6,8 @@ const shellManager = require('./modules/manage_shell.js');
 const dialogManager = require('./modules/manage_dialog.js');
 const autoLaunchManager = require('./modules/manage_autolaunch.js');
 
+app.setPath('userData', path.join(app.getPath('appData'), 'Teal_Interactive', 'AutoLaunch'));
+
 if (require('electron-squirrel-startup')) {
   app.quit();
 }
@@ -24,7 +26,8 @@ const createMainWindow = () => {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
       enableRemoteModule: false,
-      nodeIntegration: false
+      nodeIntegration: false,
+      // partition: 'nopersist',  // Verhindert das Speichern von Daten
     }
   });
   mainWindow.loadFile(path.join(__dirname, './www/index.html'));

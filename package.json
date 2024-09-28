@@ -6,6 +6,7 @@
   "main": "src/app.js",
   "scripts": {
     "start": "electron-forge start",
+    "build": "electron-packager . AutoLaunch --platform=win32 --arch=x64 --out=./build --overwrite --app-version=1.0.0 --build-version=100 --asar --icon=src/www/assets/resources/logo.ico --prune=true --executable-name=\"app.launch\" --win32metadata.CompanyName=\"Teal Interactive\" --win32metadata.ProductName=\"AutoLaunch\" --win32metadata.FileDescription=\"AutoLaunch\" --win32metadata.VersionString.CompanyName=\"Teal Interactive\" --win32metadata.VersionString.ProductVersion=\"1.0.0\"",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish"
@@ -19,7 +20,8 @@
     "@electron-forge/plugin-auto-unpack-natives": "^7.4.0",
     "@electron-forge/plugin-fuses": "^7.4.0",
     "@electron/fuses": "^1.8.0",
-    "electron": "^32.0.2"
+    "electron": "^32.1.0",
+    "electron-packager": "^17.1.2"
   },
   "keywords": [],
   "author": {

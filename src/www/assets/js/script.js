@@ -15,14 +15,18 @@ const insertTheText = async () => {
     };
 };
 
-const checkedCard = (event) => {
+const checkedCard = (event, delStatus) => {
     const cardId = event.currentTarget.getAttribute('card-id');
     const apps = loadToStorage();
     apps[cardId].activ = !apps[cardId].activ;
-    delItemToStorage(apps[cardId], cardId);
-    apps.forEach(app => {
-        setAutoStart(app.path, app.name, app.activ);
-    });
+    if (!delStatus) {
+        console.log(cardId, apps[cardId].path, apps[cardId].name, delStatus);
+        setAutoStart(apps[cardId].path, apps[cardId].name, delStatus);
+        delItemToStorage('', cardId, 'delete');
+    } else {
+        setAutoStart(apps[cardId].path, apps[cardId].name, apps[cardId].activ);
+        delItemToStorage(apps[cardId], cardId);
+    };
 };
 
 const saveForm = (event) => {
@@ -37,8 +41,7 @@ const hideBtn = (event) => {
 };
 
 const delCard = (event) => {
-    const cardId = event.currentTarget.getAttribute('card-id');
-    delItemToStorage('', cardId, 'delete');
+    checkedCard(event, false);
 };
 
 export { insertTheText, checkedCard, saveForm, hideBtn, delCard };

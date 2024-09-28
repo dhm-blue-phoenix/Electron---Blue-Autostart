@@ -23,7 +23,7 @@ const addEventToSaveForm = () => {
 const addEventToCheckedCard = () => {
     document.querySelectorAll('.checkedCard').forEach(checkbox => {
         if (!checkbox.hasEventListener) {
-            checkbox.addEventListener('click', (event) => { checkedCard(event); });
+            checkbox.addEventListener('click', (event) => { checkedCard(event, true); });
         };
         checkbox.hasEventListener = true;
     });

@@ -1,8 +1,16 @@
 const { dialog } = require('electron');
 
 let tempFilePath = '';
+let isDialogOpen = false;
 
 const openFileDialog = async () => {
+    if (isDialogOpen) {
+        console.log('[openFileDialog] Der Dialog ist bereits geöffnet.');
+        return null;
+    };
+
+    isDialogOpen = true;
+
     try {
         const resultDialog = await dialog.showOpenDialog({
             properties: ['openFile'],
@@ -20,7 +28,9 @@ const openFileDialog = async () => {
         return null;
     } catch (err) {
         console.error('[openFileDialog] Es ist ein Problem beim OEffnen des Dialoges aufgetreten:', err);
-    };
+    } finally {
+        isDialogOpen = false;
+    }
 };
 
 module.exports = { openFileDialog };
